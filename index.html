@@ -12,5 +12,38 @@
         <h2>
             <a href="https://www.btcsov.com/">main site</a>
         </h2>
+
+
+        <!-- <span id="percentFrozen"></span> % <br>
+        <span id="percentFrozen2"></span> 
+        
+        
+        <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
+        
+        <script>
+
+            //BEGIN LOADER
+            let loader = `loading...`;
+            document.getElementById('percentFrozen').innerHTML = loader;
+            //END LOADER
+
+            $(document).ready(async function () {
+
+                let percentageFrozen;
+
+                let frozenURL = ' https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
+                let circulatingURL = ' https://bsov-api.herokuapp.com/api';
+
+                let frozenRequest = $.get(frozenURL, function (frozenData) {
+                    console.log('data', frozenData.result.toLocaleString('en-US', { minimumFractionDigits: 2 }));
+                    let circulatingRequest = $.get(circulatingURL, function (circulatingData) {
+                        console.log('data2', frozenData.result / (circulatingData.tokensMinted * 1e6));
+                        percentageFrozen = frozenData.result / (circulatingData.tokensMinted /100);
+                        $("#percentFrozen").html(percentageFrozen.toFixed(2));
+                        $("#percentFrozen2").html(parseInt(frozenData.result, 10).toLocaleString('en-US', { minimumFractionDigits: 2 }));
+                    });
+                });
+            });
+        </script> -->
     </body>
 </html>
