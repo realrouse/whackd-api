@@ -1,7 +1,25 @@
 <html>
     <body>
+
+        <h1>
+            <a href="/api">BitcoinSoV API's</a>
+        </h1>
+        <hr>
         <h2>
-            <a href="/api">click here for api</a>
+            <a href="/api">main api</a>
+        </h2>
+        <h2>
+            <a href="/frozen">time locked tokens count</a>
+        </h2>
+        <h2>
+            <a href="/circulating">circulating supply</a>
+        </h2>
+        <h2>
+            <a href="/price">current price</a>
+        </h2>
+        <hr>
+        <h2>
+            <a href="https://www.btcsov.com/">main site</a>
         </h2>
         <h2>
             <a href="https://btcsovstats.github.io/BSOV-Stats/">mining stats</a>
@@ -9,41 +27,35 @@
         <h2>
             <a href="https://dev.btcsov.com/">dev link</a>
         </h2>
-        <h2>
-            <a href="https://www.btcsov.com/">main site</a>
-        </h2>
 
 
-        <!-- <span id="percentFrozen"></span> % <br>
-        <span id="percentFrozen2"></span> 
+        <!-- <span id="percentFrozen18"></span> -->
         
         
-        <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
-        
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+<!--         
         <script>
+            //frozen
+            let frozenURL18 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
+            let frozen = $.ajax({
+                url: frozenURL18,
+                method: "GET"
+            }).then(function (response) {
+                console.log("frozen",response.result)
+                return $("#percentFrozen18").html(response.result)
+            })
 
-            //BEGIN LOADER
-            let loader = `loading...`;
-            document.getElementById('percentFrozen').innerHTML = loader;
-            //END LOADER
 
-            $(document).ready(async function () {
+            //price??
+            let circulatingURL18 = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoinsov&vs_currencies=usd';
 
-                let percentageFrozen;
-
-                let frozenURL = ' https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
-                let circulatingURL = ' https://bsov-api.herokuapp.com/api';
-
-                let frozenRequest = $.get(frozenURL, function (frozenData) {
-                    console.log('data', frozenData.result.toLocaleString('en-US', { minimumFractionDigits: 2 }));
-                    let circulatingRequest = $.get(circulatingURL, function (circulatingData) {
-                        console.log('data2', frozenData.result / (circulatingData.tokensMinted * 1e6));
-                        percentageFrozen = frozenData.result / (circulatingData.tokensMinted /100);
-                        $("#percentFrozen").html(percentageFrozen.toFixed(2));
-                        $("#percentFrozen2").html(parseInt(frozenData.result, 10).toLocaleString('en-US', { minimumFractionDigits: 2 }));
-                    });
-                });
-            });
-        </script> -->
+            let circulating = $.ajax({
+                url: circulatingURL18,
+                method: "GET"
+            }).then(function (response) {
+                console.log("price", response.bitcoinsov.usd)
+                // return $("#percentFrozen18").html(response.bitcoinsov.usd)
+            })
+      </script> -->
     </body>
 </html>
