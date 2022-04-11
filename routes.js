@@ -25,7 +25,7 @@ router.get('/api', (__, res) => {
             _.symbol().call((__, symbol) => { 
                 _.decimals().call((__, decimals) => { 
                                                                                         const burn = supply - formatted(totalSupply)
-											const _totalSupply: parse(_totalSupply)
+											
                                                                                     res.send({
                                                                                         name,
                                                                                         symbol,
@@ -53,7 +53,7 @@ router.get('/api', (__, res) => {
 
 router.get('/circulating', (__, res) => {
     _.totalSupply().call((__, totalSupply) => { 
-        _._totalSupply().call((__, totalSupply) => {
+        _._totalSupply().call((__, _totalSupply) => {
             const burn = supply - formatted(totalSupply)
             res.send({
                 circulatingSupply: formatted(_totalSupply) - burn
