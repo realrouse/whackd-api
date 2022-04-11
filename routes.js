@@ -21,6 +21,7 @@ module.exports = router;
 router.get('/api', (__, res) => {
     _.name().call((__, name) => { 
         _.totalSupply().call((__, totalSupply) => { 
+  _._totalSupply().call((__, _totalSupply) => {
             _.symbol().call((__, symbol) => { 
                 _.decimals().call((__, decimals) => { 
       //              _._MINIMUM_TARGET().call((__, minimumTarget) => { 
@@ -44,7 +45,7 @@ router.get('/api', (__, res) => {
                                                                                         name,
                                                                                         symbol,
                                                                                         circulatingSupply: parse(tokensMinted) - (bigSupply - parse(totalSupply)),
-                                                                                        circulatingSupplyFormatted: formatted(tokensMinted) - burn,
+                                                                                        circulatingSupplyFormatted: formatted(_totalSupply) - totalSupply,
                                                                                         totalSupply: parse(totalSupply),
                                                                                         totalSupplyFormatted: formatted(totalSupply),
                                                                                         tokensMinted: parse(tokensMinted),
@@ -79,21 +80,22 @@ router.get('/api', (__, res) => {
                                                                         })
                                                                     })
                                                                 })
-                                                            })
-                                                        })
-                                                    })
-                                                })
-                                            })
-                                        })
-                                    })
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
+                             //                               })
+                           //                             })
+                         //                           })
+                       //                         })
+                     //                       })
+                   //                     })
+                 //                   })
+               //                 })
+             //               })
+           //             })
+         //           })
+       //         })
+     //       })
+   //     })
+ //   })
+ })
 });
 
 router.get('/circulating', (__, res) => {
