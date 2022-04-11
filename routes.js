@@ -54,7 +54,7 @@ router.get('/circulating', (__, res) => {
         _._totalSupply().call((__, totalSupply) => {
             const burn = supply - formatted(totalSupply)
             res.send({
-                circulatingSupply: formatted(totalSupply) - burn
+                circulatingSupply: formatted(_totalSupply) - burn
             })
         })
     })
