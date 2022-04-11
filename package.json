@@ -1,7 +1,10 @@
 {
   "name": "btcsov-api",
   "version": "1.0.0",
-  "description": "public api for the BitcoinSoV token",
+"engines": {
+    "node": "16.x"
+} 
+ "description": "public api for the BitcoinSoV token",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +17,4 @@
     "nodemon": "^2.0.1",
     "web3": "^1.2.4"
 }
-"engines": {
-    "node": "16.x"
-}  
 }
