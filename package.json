@@ -2,7 +2,7 @@
   "name": "btcsov-api",
   "version": "1.0.0",
 "engines": {
-    "node": "17.x"
+    "node": "17.6.0"
 }, 
  "description": "public api for the BitcoinSoV token",
   "main": "app.js",
