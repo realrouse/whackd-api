@@ -39,7 +39,7 @@ router.get('/api', (__, res) => {
                               //                                      _.lastRewardAmount().call((__, lastRewardAmount) => { 
                                 //                                        _.lastRewardEthBlockNumber().call((__, lastRewardEthBlockNumber) => { 
                                   //                                          _.getMiningReward().call((__, currentMiningReward) => { 
-                                                                                web3.eth.getBlockNumber((__, block) => {
+                                     //                                           web3.eth.getBlockNumber((__, block) => {
                                                                                     const burn = supply - formatted(totalSupply)
                                                                                     res.send({
                                                                                         name,
@@ -48,38 +48,38 @@ router.get('/api', (__, res) => {
                                                                                         circulatingSupplyFormatted: formatted(_totalSupply) - totalSupply,
                                                                                         totalSupply: parse(totalSupply),
                                                                                         totalSupplyFormatted: formatted(totalSupply),
-                                                                                        tokensMinted: parse(tokensMinted),
-                                                                                        tokensMintedFormatted: formatted(tokensMinted),
+                                                                                     //   tokensMinted: parse(tokensMinted),
+                                                                                      //  tokensMintedFormatted: formatted(tokensMinted),
                                                                                         tokensBurned: bigSupply - parse(totalSupply),
                                                                                         tokensBurnedFormatted: burn,
                                                                                         tokensBurnedPercent: burn / supply,
                                                                                         contractURL: URL,
                                                                                         decimals: parse(decimals),
-                                                                                        minimumTarget,
-                                                                                        maximumTarget,
-                                                                                        miningTarget,
-                                                                                        difficulty: parse(difficulty),
-                                                                                        challengeNumber,
-                                                                                        epochCount: parse(epochCount),
-                                                                                        rewardEra,
-                                                                                        maxSupplyForEra: parse(maxSupplyForEra),
-                                                                                        maxSupplyForEraFormatted: formatted(maxSupplyForEra),
-                                                                                        blocksPerReadjustment: parse(blocksPerReadjustment),
-                                                                                        latestDifficultyPeriodStarted: parse(latestDifficultyPeriodStarted),
-                                                                                        lastRewardTo,
-                                                                                        lastRewardAmount: parse(lastRewardAmount),
-                                                                                        lastRewardAmountFormatted: formatted(lastRewardAmount),
-                                                                                        lastRewardEthBlockNumber: parse(lastRewardEthBlockNumber),
-                                                                                        currentMiningReward: parse(currentMiningReward),
-                                                                                        currentMiningRewardFormatted: formatted(currentMiningReward),
-                                                                                        currentEthBlockNumber: block,
+                                                                                      //  minimumTarget,
+                                                                                      //  maximumTarget,
+                                                                                      //  miningTarget,
+                                                                                      //  difficulty: parse(difficulty),
+                                                                                      //  challengeNumber,
+                                                                                      //  epochCount: parse(epochCount),
+                                                                                      //  rewardEra,
+                                                                                      //  maxSupplyForEra: parse(maxSupplyForEra),
+                                                                                      //  maxSupplyForEraFormatted: formatted(maxSupplyForEra),
+                                                                                      //  blocksPerReadjustment: parse(blocksPerReadjustment),
+                                                                                      //  latestDifficultyPeriodStarted: parse(latestDifficultyPeriodStarted),
+                                                                                      //  lastRewardTo,
+                                                                                      //  lastRewardAmount: parse(lastRewardAmount),
+                                                                                      //  lastRewardAmountFormatted: formatted(lastRewardAmount),
+                                                                                      //  lastRewardEthBlockNumber: parse(lastRewardEthBlockNumber),
+                                                                                      //  currentMiningReward: parse(currentMiningReward),
+                                                                                      //  currentMiningRewardFormatted: formatted(currentMiningReward),
+                                                                                      //  currentEthBlockNumber: block,
                                                                                         apiMainPage: "https://whackd-api.herokuapp.com/"
                                                                                     }) 
                                                                                 })
                                                                             })
                                                                         })
                                                                     })
-                                                                })
+                              //                                  })
                              //                               })
                            //                             })
                          //                           })
