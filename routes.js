@@ -85,15 +85,10 @@ router.get('/circulating', (__, res) => {
 		axios.get(UniswapWhackdEthAmountOfWhackd).then(function (response) {
 	console.log(response.data.result)
         const {result} = response.data		
-//axios.get(UniswapWhackdEthAmountOfEth).then(function (response) {
-//        console.log(response.data.result2)
-//        const {result2} = response.data
 res.send({
             UniswapWhackdEthAmountOfWhackd: formatted(result)
-//	    UniswapWhackdEthAmountOfEth: formatted(result2)	
-//        })
-//      })
-    })
+})    
+})
  });
 
 
