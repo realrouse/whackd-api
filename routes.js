@@ -58,7 +58,7 @@ router.get('/circulating-text', (__, res) => {
 		const circulatingSupplyText = formatted(_totalSupply) - supply - formatted(totalSupply)
             res.send({
                 pureText (circulatingSupplyText)
-            })
+            
         })
     })
 });
