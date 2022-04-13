@@ -77,28 +77,28 @@ router.get('/circulating', (__, res) => {
     })
 });
 
-router.get('/frozen', (__, res) => {
-    const frozenURL18 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
-    axios.get(frozenURL18).then(function (response) {
-        console.log(response.data.result)
-        const {result} = response.data
-        res.send({
-            timeLockedTokens: parse(result),
-            timeLockedTokensFormatted: formatted(result)
-        })
-    })
-});
+// router.get('/frozen', (__, res) => {
+//    const frozenURL18 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
+//    axios.get(frozenURL18).then(function (response) {
+//        console.log(response.data.result)
+//        const {result} = response.data
+//        res.send({
+//            timeLockedTokens: parse(result),
+//            timeLockedTokensFormatted: formatted(result)
+//        })
+//    })
+// });
 
-router.get('/price', (__, res) => {
-    const priceURL = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoinsov&vs_currencies=usd';
-    axios.get(priceURL).then( function (response) {
-        const { usd } = response.data.bitcoinsov
-        console.log(usd)
-        res.send({
-            currentPrice: usd
-        })
-    })
-});
+//router.get('/price', (__, res) => {
+//    const priceURL = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoinsov&vs_currencies=usd';
+//    axios.get(priceURL).then( function (response) {
+//        const { usd } = response.data.bitcoinsov
+//        console.log(usd)
+//        res.send({
+//            currentPrice: usd
+//        })
+//    })
+//});
 
 
 router.get('/', (__, res) => {
