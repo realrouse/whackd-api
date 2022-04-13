@@ -91,8 +91,8 @@ router.get('/circulating', (__, res) => {
 res.send({
             UniswapWhackdEthAmountOfWhackd: formatted(result1)
 //	    UniswapWhackdEthAmountOfEth: formatted(result2)	
-        })
-      })
+//        })
+//      })
     })
  });
 
