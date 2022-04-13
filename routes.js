@@ -85,7 +85,7 @@ router.get('/circulating', (__, res) => {
         console.log(response.data.result)
         const {result} = response.data
         res.send({
-            WHACKD-ETH-whackdamount: formatted(result)
+            WHACKDETHwhackdamount: formatted(result)
         })
     })
  });
