@@ -54,9 +54,10 @@ router.get('/api', (__, res) => {
 router.get('/circulating-text', (__, res) => {
     _.totalSupply().call((__, totalSupply) => { 
         _._totalSupply().call((__, _totalSupply) => {
-            const circulatingSupplyText = formatted(_totalSupply) - supply - formatted(totalSupply)
+		const pureText = input => { return }
+		const circulatingSupplyText = formatted(_totalSupply) - supply - formatted(totalSupply
             res.send({
-                circulatingSupplyText
+                pureText (circulatingSupplyText)
             })
         })
     })
