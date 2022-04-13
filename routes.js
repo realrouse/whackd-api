@@ -57,7 +57,7 @@ router.get('/circulating-text', (__, res) => {
     _.totalSupply().call((__, totalSupply) => { 
         _._totalSupply().call((__, _totalSupply) => {
             const burn = supply - formatted(totalSupply)
-            res.set('text/html').send(
+            res.set('text/html').end(
                 formatted(_totalSupply) - burn
             )
         })
