@@ -80,12 +80,12 @@ router.get('/circulating', (__, res) => {
 });
 
  router.get('/liquidity', (__, res) => {
-    const WHACKDETHwhackdamount = "https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0xCF8335727B776d190f9D15a54E6B9B9348439eEE&address=0xc491405d542a393d8d202a72f0fb076447e61891&tag=latest&apikey=VFXCIKBK33QVIW42AM7153EANCA3YT7Q7V"
-    axios.get(WHACKDETHwhackdamount).then(function (response) {
+    const UniswapWhackdEthAmountOfWhackd = "https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0xCF8335727B776d190f9D15a54E6B9B9348439eEE&address=0xc491405d542a393d8d202a72f0fb076447e61891&tag=latest&apikey=VFXCIKBK33QVIW42AM7153EANCA3YT7Q7V"
+    axios.get(UniswapWhackdEthAmountOfWhackd).then(function (response) {
         console.log(response.data.result)
         const {result} = response.data
         res.send({
-            WHACKDETHwhackdamount: formatted(result)
+            UniswapWhackdEthAmountOfWhackd: formatted(result)
         })
     })
  });
