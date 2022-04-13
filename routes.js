@@ -36,7 +36,7 @@ router.get('/api', (__, res) => {
 										
                                                                                         totalSupplyFormatted: formatted(totalSupply),
                                                                                 	maxSupplyFormatted: parse(supply),
-											maxSupply: parse(bigsupply), 
+											maxSupply: parse(bigSupply), 
                                                                                         tokensBurned: bigSupply - parse(totalSupply),
                                                                                         tokensBurnedFormatted: burn,
                                                                                         tokensBurnedPercent: burn / supply,
