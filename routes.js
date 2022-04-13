@@ -51,6 +51,8 @@ router.get('/api', (__, res) => {
  })
 });
 
+
+
 router.get('/circulating-text', (__, res) => {
     _.totalSupply().call((__, totalSupply) => { 
         _._totalSupply().call((__, _totalSupply) => {
@@ -61,7 +63,7 @@ router.get('/circulating-text', (__, res) => {
             
         
     
-});
+
 
 
 router.get('/circulating', (__, res) => {
