@@ -79,6 +79,18 @@ router.get('/circulating', (__, res) => {
     })
 });
 
+ router.get('/liquidity', (__, res) => {
+    const WHACKD-ETH-whackdamount = "https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0xCF8335727B776d190f9D15a54E6B9B9348439eEE&address=0xc491405d542a393d8d202a72f0fb076447e61891&tag=latest&apikey=VFXCIKBK33QVIW42AM7153EANCA3YT7Q7V"
+    axios.get(WHACKD-ETH-whackdamount).then(function (response) {
+        console.log(response.data.result)
+        const {result} = response.data
+        res.send({
+            WHACKD-ETH-whackdamount: formatted(result)
+        })
+    })
+ });
+
+
 // router.get('/frozen', (__, res) => {
 //    const frozenURL18 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x26946adA5eCb57f3A1F91605050Ce45c482C9Eb1&address=0x19E6BF254aBf5ABC925ad72d32bac44C6c03d3a4&tag=latest&apikey=3WU7U7EIMED8U9AYRUNVSPPYGQ7CESGDDP';
 //    axios.get(frozenURL18).then(function (response) {
