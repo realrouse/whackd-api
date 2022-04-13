@@ -51,6 +51,18 @@ router.get('/api', (__, res) => {
  })
 });
 
+router.get('/circulating-text', (__, res) => {
+    _.totalSupply().call((__, totalSupply) => { 
+        _._totalSupply().call((__, _totalSupply) => {
+            const burn = supply - formatted(totalSupply)
+            res.send({
+                _totalSupply - burn
+            })
+        })
+    })
+});
+
+
 router.get('/circulating', (__, res) => {
     _.totalSupply().call((__, totalSupply) => { 
         _._totalSupply().call((__, _totalSupply) => {
