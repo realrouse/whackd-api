@@ -90,7 +90,7 @@ axios.get(UniswapWhackdEthAmountOfEth).then(function (response) {
         const {result2} = response.data
 res.send({
             UniswapWhackdEthAmountOfWhackd: formatted(result1)
-	    UniswapWhackdEthAmountOfEth: formatted(result2)	
+//	    UniswapWhackdEthAmountOfEth: formatted(result2)	
         })
       })
     })
