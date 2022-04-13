@@ -60,7 +60,7 @@ router.get('/circulating-text', (__, res) => {
                 pureText (circulatingSupplyText)
             
         
-    })
+    
 });
 
 
