@@ -45,8 +45,8 @@ router.get('/api', (__, res) => {
                                                                                                                                                                              
 											apiMainPage: "https://whackd-api.herokuapp.com/"
                                                                                     }) 
-                                                                                })
-                                                                            })
+                                                                                
+                                                                            
                                                                         })
                                                                     })
                     
