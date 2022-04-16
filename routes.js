@@ -93,8 +93,8 @@ router.get('/circulating', (__, res) => {
        			const {bye} = response.data
 res.send({
 
-		UniswapWhackdEthAmountOfWhackd: (result),
-		 UniswapWhackdEthAmountOfETH: (result)
+		UniswapWhackdEthAmountOfWhackd: (hello),
+		 UniswapWhackdEthAmountOfETH: (bye)
 		
 })
 })    
