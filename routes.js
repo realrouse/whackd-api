@@ -83,15 +83,14 @@ router.get('/circulating', (__, res) => {
 
  router.get('/liquidity', (__, res) => {
 	const UniswapWhackdEthAmountOfWhackd = "https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0xCF8335727B776d190f9D15a54E6B9B9348439eEE&address=0xc491405d542a393d8d202a72f0fb076447e61891&tag=latest&apikey=VFXCIKBK33QVIW42AM7153EANCA3YT7Q7V"
-	const UniswapWhackdEthAmountOfEth = "https://api.etherscan.io/api?module=account&action=balance&address=0xc491405d542a393d8d202a72f0fb076447e61891&tag=latest&apikey=VFXCIKBK33QVIW42AM7153EANCA3YT7Q7V"
-		axios.get(UniswapWhackdEthAmountOfWhackd).then(function (response) {
-		
-	console.log(response.data.result)
-       	const {result} = response.data
-axios.get(UniswapWhackdEthAmountOfEth).then(function (response) {
+	const UniswapWhackdEthAmountOfEth = "https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2&address=0xc491405d542a393d8d202a72f0fb076447e61891&tag=latest&apikey=VFXCIKBK33QVIW42AM7153EANCA3YT7Q7V"
+		axios.get(UniswapWhackdEthAmountOfWhackd).then(function (response) {	
+			console.log(response.data.result)
+       			const {result} = response.data
 
-	console.log(response.data.result)
-       	const {result} = response.data
+		axios.get(UniswapWhackdEthAmountOfEth).then(function (response) {
+			console.log(response.data.result)
+       			const {result} = response.data
 res.send({
 
 		UniswapWhackdEthAmountOfWhackd: formatted(result),
