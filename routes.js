@@ -86,15 +86,15 @@ router.get('/circulating', (__, res) => {
 	const UniswapWhackdEthAmountOfEth = "https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2&address=0xc491405d542a393d8d202a72f0fb076447e61891&tag=latest&apikey=VFXCIKBK33QVIW42AM7153EANCA3YT7Q7V"
 		axios.get(UniswapWhackdEthAmountOfWhackd).then(function (response) {	
 			console.log(response.data.result)
-       			const {result} = response.data
+       			const {resultWHACKD} = response.data
 
 		axios.get(UniswapWhackdEthAmountOfEth).then(function (response) {
 			console.log(response.data.result)
-       			const {result} = response.data
+       			const {resultETH} = response.data
 res.send({
 
-		UniswapWhackdEthAmountOfWhackd: formatted(result),
-		 UniswapWhackdEthAmountOfETH: formatted(result),
+		UniswapWhackdEthAmountOfWhackd: formatted(resultWHACKD),
+		 UniswapWhackdEthAmountOfETH: formatted(resultETH),
 		
 })
 })    
