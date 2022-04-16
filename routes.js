@@ -11,6 +11,7 @@ const URL = 'https://etherscan.io/address/0xCF8335727B776d190f9D15a54E6B9B934843
 const address = "0xCF8335727B776d190f9D15a54E6B9B9348439eEE" //WHACKD contract address
 const contract = new web3.eth.Contract(abi, address)
 const decimalPlaces = 1000000000000000000
+const ETHdecimalPlaces = 1000000000000000
 const supply = 1000000000
 const bigSupply = 1000000000000000000000000000
 const name = "Whackd"
@@ -18,6 +19,7 @@ const symbol = "WHACKD"
 const _ = contract.methods
 const parse = input => { return JSON.parse(input) }
 const formatted = input => { return parse(input) / decimalPlaces }
+const formattedETH = input => { return parse(input) / ETHdecimalPlaces }
 module.exports = router;
 
 router.get('/api', (__, res) => {
@@ -87,8 +89,8 @@ router.get('/circulating', (__, res) => {
         const {result1} = response.data
 	const {result2} = response.data		
 res.send({
-		UniswapWhackdEthAmountOfWhackd: (result1),
-		UniswapWhackdEthAmountOfEth: (result2)
+		UniswapWhackdEthAmountOfWhackd: formatted(result1),
+		UniswapWhackdEthAmountOfEth: formatted(result2)
 })
 })    
 })
