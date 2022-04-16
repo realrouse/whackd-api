@@ -87,8 +87,8 @@ router.get('/circulating', (__, res) => {
         const {result1} = response1.data
 	const {result2} = response2.data		
 res.send({
-		UniswapWhackdEthAmountOfWhackd: formatted(result1),
-		UniswapWhackdEthAmountOfEth: formatted(result2)
+		UniswapWhackdEthAmountOfWhackd: (result1),
+		UniswapWhackdEthAmountOfEth: (result2)
 })
 })    
 })
@@ -122,6 +122,7 @@ res.send({
 router.get('/', (__, res) => {
     res.sendFile(path.join(__dirname, '/index.html'));
 });
+
 
 
 
