@@ -84,10 +84,10 @@ router.get('/circulating', (__, res) => {
 	const UniswapWhackdEthAmountOfEth = "https://api.etherscan.io/api?module=account&action=balance&address=0xc491405d542a393d8d202a72f0fb076447e61891&tag=latest&apikey=VFXCIKBK33QVIW42AM7153EANCA3YT7Q7V"
 		axios.get(UniswapWhackdEthAmountOfWhackd).then(function (response1) {
 		axios.get(UniswapWhackdEthAmountOfEth).then(function (response2) {
-        const {result} = response1.data
+        const {result1} = response1.data
 	const {result2} = response2.data		
 res.send({
-		UniswapWhackdEthAmountOfWhackd: formatted(result),
+		UniswapWhackdEthAmountOfWhackd: formatted(result1),
 		UniswapWhackdEthAmountOfEth: formatted(result2)
 })
 })    
