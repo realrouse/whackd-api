@@ -90,8 +90,9 @@ router.get('/circulating', (__, res) => {
        	const {result1} = response.data
 axios.get(UniswapWhackdEthAmountOfEth).then(function (response) {
 res.send({
+
 		UniswapWhackdEthAmountOfWhackd: formatted(result1),
-		UniswapWhackdEthAmountOfETH: formatted(result2),
+	//	 UniswapWhackdEthAmountOfETH: formatted(result2),
 		
 })
 })    
